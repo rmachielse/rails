@@ -114,6 +114,7 @@ module ActionCable
       end
 
       def beat
+        puts "BAS: beat #{@env["action_dispatch.request_id"]}"
         transmit type: ActionCable::INTERNAL[:message_types][:ping], message: Time.now.to_i
       end
 
